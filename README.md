@@ -1,5 +1,5 @@
 #重庆邮电大学讲座信息获取
-----------
+
 #0x01 尝试
 最开始的想法是将http://www.cqupt.edu.cn/cqupt/academic_news.shtml
 用requests拿到之后，用beautifulsoup解析出详细信息，然而在拿到的html文件中没有找到讲座信息，想到网站应该是用ajax来加载数据的。
