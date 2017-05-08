@@ -1,11 +1,11 @@
-#重庆邮电大学讲座信息获取
+# 重庆邮电大学讲座信息获取
 
-#0x01 尝试
+# 0x01 尝试
 最开始的想法是将http://www.cqupt.edu.cn/cqupt/academic_news.shtml
 用requests拿到之后，用beautifulsoup解析出详细信息，然而在拿到的html文件中没有找到讲座信息，想到网站应该是用ajax来加载数据的。
 
 
-#0x02 确定思路
+# 0x02 确定思路
 在chrome的调试工具里，点击network中的XHR（XHR代表XMLHTTPrequest）找到如下借口：
 http://www.cqupt.edu.cn/getPublicPage.do?ffmodel=notic&&nc_mode=news&page=1&rows=20
 最简单的思路就是将接口请求结果(json格式)转成字典之后从中提取出讲座的title和id
@@ -31,7 +31,7 @@ print "举办单位 : %s"%dept_name
 http://www.cqupt.edu.cn/getPublicNotic.do?id=8749
 
 
-#0x03 完善代码
+# 0x03 完善代码
 
  - 出错控制——try...except...
  - GUI窗口——easygui库
