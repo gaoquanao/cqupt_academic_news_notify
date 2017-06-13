@@ -88,18 +88,23 @@ if  __name__ == "__main__":
 		easygui.msgbox("爬取讲座信息失败, 请检查网络是否正常连接")
 
 ```
+</br>
 ![](./img/shot.png)
+</br>
 点击detail按钮，启动浏览器打开讲座详情页面
-
 代码见OldLectureNotify.py
 
 ## Update
-不再使用easygui，而是使用windows的Toast通知。
-![](./img/new.png)
 
+不再使用easygui，而是使用windows的Toast通知。
+
+</br>
+![](./img/new.png)
+</br>
 通过左键点击trayicon进入讲座详情页面，双击trayicon退出。
 实现上比较简单，调用win32api来检测trayicon是否被左键点击，双击等等，然后在
 onClick函数中调用detail函数。
+
 ```python
     def onTaskbarNotify(self, hwnd, msg, wparam, lparam):
         if lparam == win32con.WM_LBUTTONUP:
@@ -120,9 +125,11 @@ onClick函数中调用detail函数。
         morelink = 'http://www.cqupt.edu.cn/getPublicNotic.do?id=%s' % lecture_id
         webbrowser.open(morelink)
 ```
+
 </br>
 主函数中可以设置icon_path的路径来改变显示的icon，默认参数就是使用windows系统的感叹号icon。
 </br>
+
 ```python
 if __name__ == "__main__":
     result = get_new_lecture()
@@ -136,8 +143,8 @@ if __name__ == "__main__":
         win32gui.PumpMessages()
     else:
         pass
-
 ```
+
 ## Todo
 1. 开机启动后，后台每隔一个小时检测一次有没有新的讲座更新
 2. 用pyinstaller打包成exe
