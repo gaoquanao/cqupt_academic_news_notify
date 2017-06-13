@@ -89,13 +89,18 @@ if  __name__ == "__main__":
 
 ```
 ![](./img/shot.png)
+
 点击detail按钮，启动浏览器打开讲座详情页面
+
 代码见OldLectureNotify.py
 
 ## Update
 不再使用easygui，而是使用windows的Toast通知。
+
 ![](./img/new.png)
+
 通过左键点击trayicon进入讲座详情页面，双击trayicon退出
+
 代码见NewLectureNotify.py
 
 ## Todo
