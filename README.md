@@ -1,11 +1,11 @@
-# 重庆邮电大学讲座信息获取
+# 获取重庆邮电大学讲座信息更新并提醒
 
-# 0x01 尝试
+## 0x01 尝试
 最开始的想法是将http://www.cqupt.edu.cn/cqupt/academic_news.shtml
 用requests拿到之后，用beautifulsoup解析出详细信息，然而在拿到的html文件中没有找到讲座信息，想到网站应该是用ajax来加载数据的。
 
 
-# 0x02 确定思路
+## 0x02 确定思路
 在chrome的调试工具里，点击network中的XHR（XHR代表XMLHTTPrequest）找到如下借口：
 http://www.cqupt.edu.cn/getPublicPage.do?ffmodel=notic&&nc_mode=news&page=1&rows=20
 最简单的思路就是将接口请求结果(json格式)转成字典之后从中提取出讲座的title和id
@@ -31,7 +31,7 @@ print "举办单位 : %s"%dept_name
 http://www.cqupt.edu.cn/getPublicNotic.do?id=8749
 
 
-# 0x03 完善代码
+## 0x03 完善代码
 
  - 出错控制——try...except...
  - GUI窗口——easygui库
@@ -88,4 +88,21 @@ if  __name__ == "__main__":
 		easygui.msgbox("爬取讲座信息失败, 请检查网络是否正常连接")
 
 ```
+![](./img/shot.png)
+点击detail按钮，启动浏览器打开讲座详情页面
+代码见OldLectureNotify.py
 
+## Update
+不再使用easygui，而是使用windows的Toast通知。
+![](./img/new.png)
+通过左键点击trayicon进入讲座详情页面，双击trayicon退出
+代码见NewLectureNotify.py
+
+## Todo
+1. 开机启动后，后台每隔一个小时检测一次有没有新的讲座更新
+2. 用pyinstaller打包成exe
+3. 利用Mac的pyobjc实现相同功能
+
+
+## 注
+仅为个人获取信息需要
