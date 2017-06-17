@@ -88,9 +88,9 @@ if  __name__ == "__main__":
 		easygui.msgbox("爬取讲座信息失败, 请检查网络是否正常连接")
 
 ```
-</br>
-![](./img/shot.png)
-</br>
+
+![旧](./img/shot.png)
+
 点击detail按钮，启动浏览器打开讲座详情页面
 代码见OldLectureNotify.py
 
@@ -98,9 +98,8 @@ if  __name__ == "__main__":
 
 不再使用easygui，而是使用windows的Toast通知。
 
-</br>
-![](./img/new.png)
-</br>
+![新](/img/new.png)
+
 通过左键点击trayicon进入讲座详情页面，双击trayicon退出。
 实现上比较简单，调用win32api来检测trayicon是否被左键点击，双击等等，然后在
 onClick函数中调用detail函数。
