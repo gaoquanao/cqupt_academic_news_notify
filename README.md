@@ -6,7 +6,7 @@
 
 
 ## 0x02 确定思路
-在chrome的调试工具里，点击network中的XHR（XHR代表XMLHTTPrequest）找到如下借口：
+在chrome的调试工具里，点击network中的XHR（XHR代表XMLHTTPrequest）找到如下接口：
 http://www.cqupt.edu.cn/getPublicPage.do?ffmodel=notic&&nc_mode=news&page=1&rows=20
 最简单的思路就是将接口请求结果(json格式)转成字典之后从中提取出讲座的title和id
 ```python
